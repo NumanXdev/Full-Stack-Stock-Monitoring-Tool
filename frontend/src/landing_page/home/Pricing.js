@@ -22,19 +22,19 @@ function Pricing() {
         <div className="col col-6 mt-3">
           <div className="row">
             <div className="col">
-              <img className="" src="/media/images/pricing-eq (1).svg" />
+              <img src="/media/images/pricing-eq (1).svg" alt="price" />
               <p style={{ fontSize: "10px", textAlign: "center" }}>
                 Free account opening
               </p>
             </div>
             <div className="col">
-              <img className="" src="/media/images/pricing-eq (1).svg" />
+              <img src="/media/images/pricing-eq (1).svg" alt="price" />
               <p style={{ fontSize: "10px", textAlign: "center" }}>
                 Free equity delivery and direct mutual funds
               </p>
             </div>
             <div className="col">
-              <img className="" src="/media/images/other-trades.svg" />
+              <img src="/media/images/other-trades.svg" alt="price" />
               <p style={{ fontSize: "10px", textAlign: "center" }}>
                 Intraday and F&O
               </p>

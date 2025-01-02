@@ -2,7 +2,7 @@ import React from "react";
 
 function Stats() {
   return (
-    <div className="container p-3">
+    <div className="container p-3 mb-3">
       <div className="row">
         <hr></hr>
         <div className="col col-6  p-5">
@@ -52,6 +52,7 @@ function Stats() {
           </div>
         </div>
       </div>
+      <div className="text-center mb-5"><img   src="/media/images/pressLogos.png" /></div>
     </div>
   );
 }
