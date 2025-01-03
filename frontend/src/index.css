@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 body {
   margin: 0;
@@ -6,10 +6,34 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.nav-link{
+.nav-link {
   margin-left: 20px;
+}
+.fa-brands {
+  margin-right: 15px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.footer,
+.a {
+  font-size: 12px;
+}
+.para {
+  font-size: 9px;
+}
+
+.bb {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  font-size: 10px;
+}
+.footer{
+  background-color: #fbfbfb;
 }
