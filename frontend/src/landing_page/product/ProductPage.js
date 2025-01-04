@@ -1,7 +1,18 @@
 import React from 'react'
+import Hero from '../about/Hero';
+import LeftSection from './LeftSection';
+import RightSection from "./RightSection"
+import Universe from "./Universe"
 
 function ProductPage() {
-    return ( <div className="">Product</div> );
+    return (
+        <>
+        <Hero/>
+        <LeftSection/>
+        <RightSection/>
+        <Universe/>
+        </>
+    );
 }
 
 export default ProductPage;

@@ -12,6 +12,7 @@ import Footer from "./landing_page/Footer";
 import NotFound from "./landing_page/NotFound";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AboutPage from "./landing_page/about/AboutPage";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
@@ -19,7 +20,7 @@ root.render(
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/Signup" element={<Signup />} />
-      <Route path="/About" element={<About />} />
+      <Route path="/About" element={<AboutPage />} />
       <Route path="/Product" element={<Product />} />
       <Route path="/Pricing" element={<Pricing />} />
       <Route path="/Support" element={<Support />} />
