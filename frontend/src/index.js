@@ -21,7 +21,7 @@ root.render(
       <Route path="/" element={<HomePage />} />
       <Route path="/Signup" element={<Signup />} />
       <Route path="/About" element={<AboutPage />} />
-      <Route path="/Product" element={<Product />} />
+      <Route path="/Products" element={<Product />} />
       <Route path="/Pricing" element={<Pricing />} />
       <Route path="/Support" element={<Support />} />
       <Route path="*" element={<NotFound />} />

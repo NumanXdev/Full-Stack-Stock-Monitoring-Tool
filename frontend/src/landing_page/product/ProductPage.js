@@ -1,18 +1,18 @@
-import React from 'react'
-import Hero from '../about/Hero';
-import LeftSection from './LeftSection';
-import RightSection from "./RightSection"
-import Universe from "./Universe"
+import React from "react";
+import Hero from "../product/Hero";
+import LeftSection from "./LeftSection";
+import RightSection from "./RightSection";
+import Universe from "./Universe";
 
 function ProductPage() {
-    return (
-        <>
-        <Hero/>
-        <LeftSection/>
-        <RightSection/>
-        <Universe/>
-        </>
-    );
+  return (
+    <>
+      <Hero />
+      <LeftSection />
+      <RightSection />
+      <Universe />
+    </>
+  );
 }
 
 export default ProductPage;
