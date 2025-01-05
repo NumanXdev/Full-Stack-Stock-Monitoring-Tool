@@ -17,7 +17,7 @@ function Hero() {
               style={{ width: "15rem" }}
             />
             <h5 className="fs-5">Free equity delivery</h5>
-            <p className="px-2" style={{ fontSize: "12px" }}>
+            <p className="px-2 text-muted" style={{ fontSize: "12px" }}>
               All equity delivery investments (NSE, BSE), are absolutely free —
               ₹ 0 brokerage.
             </p>
@@ -30,7 +30,7 @@ function Hero() {
               style={{ width: "15rem" }}
             />
             <h5 className="">Intraday and F&O trades</h5>
-            <p className="px-4" style={{ fontSize: "12px" }}>
+            <p className="px-4 text-muted" style={{ fontSize: "12px" }}>
               Flat ₹ 20 or 0.03% (whichever is lower) per executed order on
               intraday trades across equity, currency, and commodity trades.
               Flat ₹20 on all option trades.
@@ -43,7 +43,7 @@ function Hero() {
             />
             <p className="">
               <h5>Free direct MF</h5>
-              <p className="px-2" style={{ fontSize: "12px" }}>
+              <p className="px-2 text-muted" style={{ fontSize: "12px" }}>
                 All direct mutual fund investments are absolutely free — ₹ 0
                 commissions & DP charges.
               </p>
@@ -53,7 +53,7 @@ function Hero() {
         <div className="col-1"></div>
       </div>
       <OpenAccount />
-      <hr/>
+      <hr />
     </div>
   );
 }
