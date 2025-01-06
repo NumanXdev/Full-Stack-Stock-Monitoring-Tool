@@ -37,3 +37,14 @@ a {
 .footer{
   background-color: #fbfbfb;
 }
+#supportWrapper{
+  background-color: #387fd1;
+}
+#track{
+  
+  color: white;
+  
+}
+.features{
+text-decoration:underline;
+}
