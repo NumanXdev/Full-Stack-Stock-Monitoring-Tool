@@ -5,11 +5,18 @@ const mongoose = require("mongoose");
 
 const Holding = require("./models/HoldingSchema");
 const Position = require("./models/positionSchema");
+const cors=require("cors");
+const bodyParser = require('body-parser');
 
 let dbUrl = process.env.MONGO_URL;
 let PORT = process.env.PORT;
 
 const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
+
+
 
 app.get("/", (req, res) => {
   res.send("Root Working!");
