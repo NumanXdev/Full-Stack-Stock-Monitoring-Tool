@@ -2,9 +2,9 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-// const { HoldingsModel } = require("./Model/HoldingModel");
-const { PositionsModel } = require("./Model/PositionsModel");
-// const { holdings } = require("../dashboard/src/data/data");
+
+const Holding = require("./models/HoldingSchema");
+const Position = require("./models/positionSchema");
 
 let dbUrl = process.env.MONGO_URL;
 let PORT = process.env.PORT;
@@ -141,43 +141,54 @@ app.get("/", (req, res) => {
 //   res.send("Data uploaded");
 // });
 
-app.get("/addpositions", (req, res) => {
-  let positions = [
-    {
-      product: "CNC",
-      name: "EVEREADY",
-      qty: 2,
-      avg: 316.27,
-      price: 312.35,
-      net: "+0.58%",
-      day: "-1.24%",
-      isLoss: true,
-    },
-    {
-      product: "CNC",
-      name: "JUBLFOOD",
-      qty: 1,
-      avg: 3124.75,
-      price: 3082.65,
-      net: "+10.04%",
-      day: "-1.35%",
-      isLoss: true,
-    },
-  ];
-  positions.forEach((item) => {
-    let temPositions = new PositionsModel({
-      product: item.product,
-      name: item.name,
-      qty: item.qty,
-      avg: item.avg,
-      price: item.price,
-      net: item.net,
-      day: item.day,
-      isLoss: item.isLoss,
-    });
-    temPositions.save();
-  });
-  res.send("Positons Added");
+// app.get("/addpositions", async (req, res) => {
+//   let positions = [
+//     {
+//       product: "CNC",
+//       name: "EVEREADY",
+//       qty: 2,
+//       avg: 316.27,
+//       price: 312.35,
+//       net: "+0.58%",
+//       day: "-1.24%",
+//       isLoss: true,
+//     },
+//     {
+//       product: "CNC",
+//       name: "JUBLFOOD",
+//       qty: 1,
+//       avg: 3124.75,
+//       price: 3082.65,
+//       net: "+10.04%",
+//       day: "-1.35%",
+//       isLoss: true,
+//     },
+//   ];
+//   positions.forEach((item) => {
+//     console.log("Item being saved:", item);
+//     let temPositions = new Position({
+//       product: item.product,
+//       name: item.name,
+//       qty: item.qty,
+//       avg: item.avg,
+//       price: item.price,
+//       net: item.net,
+//       day: item.day,
+//       isLoss: item.isLoss,
+//     });
+//     console.log("Saving Position:", temPositions);
+//     temPositions.save();
+//   });
+//   res.send("Data Uploaded")
+// });
+
+app.get("/holdings", async (req, res) => {
+  let allHoldings = await Holding.find({});
+  res.json(allHoldings);
+});
+app.get("/positions", async (req, res) => {
+  let allPositions = await Position.find({});
+  res.json(allPositions);
 });
 
 async function main() {
