@@ -16,11 +16,11 @@ import {
 import { watchlist } from "../data/data";
 import { DoughnutChart } from "./DoughnoutChart";
 
-const labels = watchlist.map((subArray) => subArray["name"]);
+// const labels = watchlist.map((subArray) => subArray["name"]);
 
 const WatchList = () => {
   const data = {
-    labels,
+    // labels,
     datasets: [
       {
         label: "Price",
