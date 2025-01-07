@@ -1,9 +1,6 @@
-// const mongoose = require("mongoose");
-// const Schema = new mongoose;
-
 const { Schema } = require("mongoose");
 
-const holdingSchema = new Schema({
+const HoldingsSchema = new Schema({
   name: String,
   qty: Number,
   avg: Number,
@@ -11,4 +8,5 @@ const holdingSchema = new Schema({
   net: String,
   day: String,
 });
-module.exports = { holdingSchema };
+
+module.exports = { HoldingsSchema };
