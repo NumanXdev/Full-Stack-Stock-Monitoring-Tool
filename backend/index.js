@@ -198,6 +198,7 @@ app.get("/positions", async (req, res) => {
   res.json(allPositions);
 });
 
+//Uploading
 app.post("/orders", async (req, res) => {
   // res.send("Working!");
   const newOrder = new Order({
@@ -212,6 +213,13 @@ app.post("/orders", async (req, res) => {
     .then(() => res.status(201).send("Order saved successfully"))
     .catch((err) => res.status(500).send("Failed to save order: " + err));
   // res.send("Saved")
+});
+
+//Recebing Data
+
+app.get("/orders", async(req, res) => {
+  let allOrder = await Order.find({});
+  res.json(allOrder);
 });
 
 async function main() {
