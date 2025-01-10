@@ -5,8 +5,10 @@ const mongoose = require("mongoose");
 
 const Holding = require("./models/HoldingSchema");
 const Position = require("./models/positionSchema");
-const cors=require("cors");
-const bodyParser = require('body-parser');
+const Order = require("./models/orderSchema");
+
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
 let dbUrl = process.env.MONGO_URL;
 let PORT = process.env.PORT;
@@ -15,8 +17,6 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-
-
 
 app.get("/", (req, res) => {
   res.send("Root Working!");
@@ -196,6 +196,22 @@ app.get("/holdings", async (req, res) => {
 app.get("/positions", async (req, res) => {
   let allPositions = await Position.find({});
   res.json(allPositions);
+});
+
+app.post("/orders", async (req, res) => {
+  // res.send("Working!");
+  const newOrder = new Order({
+    name: req.body.name,
+    qty: req.body.qty,
+    price: req.body.price,
+    mode: req.body.mode,
+  });
+
+  await newOrder
+    .save()
+    .then(() => res.status(201).send("Order saved successfully"))
+    .catch((err) => res.status(500).send("Failed to save order: " + err));
+  // res.send("Saved")
 });
 
 async function main() {
