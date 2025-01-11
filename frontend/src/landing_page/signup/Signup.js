@@ -31,6 +31,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Form data being sent:", inputValue);
     try {
       const { data } = await axios.post(
         "http://localhost:3000/signup",

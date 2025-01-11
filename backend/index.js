@@ -23,14 +23,13 @@ let PORT = process.env.PORT;
 
 const app = express();
 
-app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3001"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -239,6 +238,15 @@ app.get("/orders", async (req, res) => {
   let allOrder = await Order.find({});
   res.json(allOrder);
 });
+
+
+
+//Testing login route
+/* 
+app.get("/login",(req,res)=>{
+  res.send("good")
+})
+*/
 
 //Async call back written in controller
 app.post("/signup", Signup);
