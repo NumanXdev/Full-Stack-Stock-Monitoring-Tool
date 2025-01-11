@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import HomePage from "./landing_page/home/HomePage";
@@ -14,23 +15,44 @@ import NotFound from "./landing_page/NotFound";
 import Signup from "./landing_page/signup/Signup";
 import Login from "./landing_page/login/Login";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+function Layout({ children }) {
+  const location = useLocation();
+
+  const hideForRoutes = ["/login", "/signup"];
+  useEffect(() => {
+    if (hideForRoutes.includes(location.pathname.toLowerCase())) {
+      import("./auth.css");
+    }
+  }, [location.pathname]);
+  const shouldHide = hideForRoutes.includes(location.pathname.toLowerCase());
+  return (
+    <>
+      {!shouldHide && <Navbar />}
+      {children}
+      {!shouldHide && <Footer />}
+    </>
+  );
+}
+
+const App = () => (
   <BrowserRouter>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/Signup" element={<Signup />} />
-      <Route path="/About" element={<AboutPage />} />
-      <Route path="/Products" element={<Product />} />
-      <Route path="/Pricing" element={<Pricing />} />
-      <Route path="/Support" element={<Support />} />
-      <Route path="*" element={<NotFound />} />
-      <Route path="/login" element={<Login />} />
-    </Routes>
-    <Footer />
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/products" element={<Product />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Layout>
   </BrowserRouter>
 );
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
