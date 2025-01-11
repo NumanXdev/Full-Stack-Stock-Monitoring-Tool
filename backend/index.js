@@ -10,10 +10,13 @@ const Position = require("./models/positionSchema");
 const Order = require("./models/orderSchema");
 
 // SignUp & Login controller
-const { Signup,Login } = require("./controllers/AuthContoller");
+const { Signup, Login } = require("./controllers/AuthContoller");
 
 const cors = require("cors");
 const bodyParser = require("body-parser");
+
+//Middleware
+const { userVerification } = require("./Middlewares/AuthMiddleware");
 
 let dbUrl = process.env.MONGO_URL;
 let PORT = process.env.PORT;
@@ -32,7 +35,6 @@ app.use(
     credentials: true,
   })
 );
-
 
 app.get("/", (req, res) => {
   res.send("Root Working!");
@@ -242,6 +244,9 @@ app.get("/orders", async (req, res) => {
 app.post("/signup", Signup);
 app.post("/login", Login);
 
+//7
+app.post("/", userVerification);
+
 async function main() {
   await mongoose.connect(dbUrl);
 }
@@ -253,8 +258,6 @@ main()
   .catch((err) => {
     console.log(err);
   });
-
-
 
 //Error Handling MiddleWare
 app.use((err, req, res, next) => {
