@@ -14,7 +14,7 @@ import NotFound from "./landing_page/NotFound";
 import Signup from "./landing_page/signup/Signup";
 import Login from "./landing_page/login/Login";
 
-import { BrowserRouter, Route, Routes,useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
