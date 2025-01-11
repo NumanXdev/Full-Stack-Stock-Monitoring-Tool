@@ -2,10 +2,14 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 
 const Holding = require("./models/HoldingSchema");
 const Position = require("./models/positionSchema");
 const Order = require("./models/orderSchema");
+
+// SignUp
+const { Signup } = require("./controllers/AuthContoller");
 
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -17,6 +21,17 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.json());
+app.use(cookieParser());
+
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 
 app.get("/", (req, res) => {
   res.send("Root Working!");
@@ -222,6 +237,9 @@ app.get("/orders", async (req, res) => {
   res.json(allOrder);
 });
 
+//Async call back written in controller
+app.post("/signup", Signup);
+
 async function main() {
   await mongoose.connect(dbUrl);
 }
@@ -233,6 +251,14 @@ main()
   .catch((err) => {
     console.log(err);
   });
+
+
+
+//Error Handling MiddleWare
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(500).json({ message: "Internal Server Error" });
+});
 
 app.listen(PORT, () => {
   console.log("App is listening at 3000");
