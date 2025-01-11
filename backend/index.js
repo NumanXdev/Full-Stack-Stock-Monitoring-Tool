@@ -217,7 +217,7 @@ app.post("/orders", async (req, res) => {
 
 //Recebing Data
 
-app.get("/orders", async(req, res) => {
+app.get("/orders", async (req, res) => {
   let allOrder = await Order.find({});
   res.json(allOrder);
 });
