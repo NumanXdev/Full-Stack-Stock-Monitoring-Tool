@@ -1,3 +1,4 @@
+//4
 require("dotenv").config();
 
 const express = require("express");
@@ -8,8 +9,8 @@ const Holding = require("./models/HoldingSchema");
 const Position = require("./models/positionSchema");
 const Order = require("./models/orderSchema");
 
-// SignUp
-const { Signup } = require("./controllers/AuthContoller");
+// SignUp & Login controller
+const { Signup,Login } = require("./controllers/AuthContoller");
 
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -239,6 +240,7 @@ app.get("/orders", async (req, res) => {
 
 //Async call back written in controller
 app.post("/signup", Signup);
+app.post("/login", Login);
 
 async function main() {
   await mongoose.connect(dbUrl);
