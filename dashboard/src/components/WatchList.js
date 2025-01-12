@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 
-import axios from "axios";
+// import axios from "axios";
 
 import GeneralContext from "./GeneralContext";
 
@@ -16,11 +16,11 @@ import {
 import { watchlist } from "../data/data";
 import { DoughnutChart } from "./DoughnoutChart";
 
-// const labels = watchlist.map((subArray) => subArray["name"]);
+const labels = watchlist.map((subArray) => subArray["name"]);
 
 const WatchList = () => {
   const data = {
-    // labels,
+    labels,
     datasets: [
       {
         label: "Price",
@@ -46,6 +46,7 @@ const WatchList = () => {
     ],
   };
 
+  //------------------------------> Template form react charjs2 <------------------------------
   // export const data = {
   //   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
   // datasets: [
