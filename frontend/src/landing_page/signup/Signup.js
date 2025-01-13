@@ -68,7 +68,7 @@ const Signup = () => {
        
         <div className="col-md-7 d-flex justify-content-center align-items-center">
           <img
-            className="img-fluid"
+            className="img-fluid d-none d-md-block"
             src="media/images/signup.png"
             alt="Signup"
             style={{ maxWidth: "90%" }}
@@ -78,7 +78,7 @@ const Signup = () => {
           <div
             className="card shadow p-3 w-100"
             style={{
-              maxHeight: "450px", // Reducing the vertical height of the form
+              maxHeight: "450px", 
             }}
           >
             <h2 className="text-primary text-center mb-3">Create an Account</h2>
