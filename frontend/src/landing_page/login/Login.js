@@ -62,12 +62,12 @@ const Login = () => {
   return (
     <div className="container vh-100 d-flex align-items-center">
       <div className="row w-100">
-        {/* Left Section: Login Form */}
+      
         <div className="col-md-5 d-flex align-items-center">
           <div
             className="card shadow p-4 w-100"
             style={{
-              maxHeight: "400px", // Compact vertical size for the form
+              maxHeight: "400px", 
             }}
           >
             <h2 className="text-primary text-center mb-3">

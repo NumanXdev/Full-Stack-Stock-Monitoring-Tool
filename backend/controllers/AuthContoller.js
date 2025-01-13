@@ -2,7 +2,6 @@
 const User = require("../models/User.model");
 const { createSecretToken } = require("../util/SecrectToken");
 
-
 // -------------------------------------------------> Sign Up <----------------------------------------------------
 
 module.exports.Signup = async (req, res, next) => {
@@ -25,17 +24,17 @@ module.exports.Signup = async (req, res, next) => {
       withCredentials: true,
       httpOnly: false,
     });
-    res
-      .status(201)
-      .json({ message: "User signed in successfully", success: true, user });
+    res.status(201).json({
+      message: "User signed in successfully",
+      success: true,
+      user,
+    });
 
     next();
   } catch (error) {
     console.log(error);
   }
 };
-
-
 
 //5
 
@@ -59,7 +58,11 @@ module.exports.Login = async (req, res, next) => {
       withCredentials: true,
       httpOnly: false,
     });
-    res.status(201).json({ message: "User Logged in successfully", success:true });
+    res.status(201).json({
+      message: "User Logged in successfully",
+      success: true,
+    });
+
     next();
   } catch (err) {
     console.error(err);
