@@ -11,26 +11,27 @@ import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
-import PersonAdd from "@mui/icons-material/PersonAdd";
-import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 
 const CustomMenu = () => {
-  const [cookies] = useCookies(["token"]);
+  const [cookies, removeCookie] = useCookies(["token"]);
   const [userData, setUserData] = useState({ id: "", username: "" });
-
-  useEffect(() => {
-    if (cookies.token) {
-      const decodedToken = jwtDecode(cookies.token);
-      const { id, username } = decodedToken;
-      setUserData({ id, username });
-    }
-  }, [cookies]);
-
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
+
+  // The useEffect hook should not be inside try-catch
+  useEffect(() => {
+    if (cookies.token) {
+      try {
+        const decodedToken = jwtDecode(cookies.token);
+        const { id, username } = decodedToken;
+        setUserData({ id, username });
+      } catch (error) {
+        console.error("Error decoding the token", error); // Handle token decoding error
+      }
+    }
+  }, [cookies]);
 
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
@@ -42,6 +43,11 @@ const CustomMenu = () => {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const logout = () => {
+    removeCookie("token");
+    window.location.href = "http://localhost:3001/login";
   };
 
   // Avatar Name & Avatar ID
@@ -127,13 +133,14 @@ const CustomMenu = () => {
           </li>
         </ul>
         <hr />
-         {/* <div className="profile" onClick={handleProfileClick}>
-          <div className="avatar">{Avatar}</div>
-          <p className="username">{userId}</p>
-        </div> */}
         <React.Fragment>
-          <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-       
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              textAlign: "center",
+            }}
+          >
             <Tooltip title="Your Account">
               <IconButton
                 onClick={handleClick}
@@ -143,7 +150,16 @@ const CustomMenu = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
               >
-                <Avatar  sx={{ width: 32, height: 32,fontSize:"0.8rem",backgroundColor: 'primary.main' }}>{avatarName}</Avatar>
+                <Avatar
+                  sx={{
+                    width: 32,
+                    height: 32,
+                    fontSize: "0.8rem",
+                    backgroundColor: "primary.main",
+                  }}
+                >
+                  {avatarName}
+                </Avatar>
               </IconButton>
             </Tooltip>
           </Box>
@@ -185,11 +201,10 @@ const CustomMenu = () => {
             <MenuItem onClick={handleClose}>
               <Avatar /> {userData.username}
             </MenuItem>
-           
-            <Divider /> 
-            
-            
-            <MenuItem onClick={handleClose}>
+
+            <Divider />
+
+            <MenuItem onClick={logout}>
               <ListItemIcon>
                 <Logout fontSize="small" />
               </ListItemIcon>
