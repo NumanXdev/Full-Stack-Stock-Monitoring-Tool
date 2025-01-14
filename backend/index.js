@@ -26,15 +26,16 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
+// app.options("*", cors());
 
 app.use(
   cors({
-    origin: ["http://localhost:3001","http://localhost:3002"],
+    origin: ["http://localhost:3000","http://localhost:3001", "http://localhost:3002"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
-
+app.options("*", cors());
 app.get("/", (req, res) => {
   res.send("Root Working!");
 });
@@ -239,8 +240,6 @@ app.get("/orders", async (req, res) => {
   res.json(allOrder);
 });
 
-
-
 //Testing login route
 /* 
 app.get("/login",(req,res)=>{
@@ -251,9 +250,14 @@ app.get("/login",(req,res)=>{
 //Async call back written in controller
 app.post("/signup", Signup);
 app.post("/login", Login);
-
+// app.get("/Home", userVerification, (req, res) => {
+//   res.send(Home);
+// });
 //7
-app.post("/", userVerification);
+// app.post("/dashboard", userVerification);
+app.post("/verify", userVerification, (req, res) => {
+  res.json({ status: true, user: req.user.username });
+});
 
 async function main() {
   await mongoose.connect(dbUrl);

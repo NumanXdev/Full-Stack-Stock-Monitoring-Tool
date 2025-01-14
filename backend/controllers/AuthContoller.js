@@ -6,7 +6,7 @@ const { createSecretToken } = require("../util/SecrectToken");
 
 module.exports.Signup = async (req, res, next) => {
   try {
-    console.log("Request body:", req.body);
+    console.log("Request body Signup:", req.body);
     const { username, email, password, createdAt } = req.body;
     const existingUser = await User.findOne({ email });
 
@@ -24,13 +24,14 @@ module.exports.Signup = async (req, res, next) => {
       withCredentials: true,
       httpOnly: false,
     });
+    console.log("signup token sent"+token)
     res.status(201).json({
       message: "User signed in successfully",
       success: true,
       user,
     });
 
-    next();
+    // next();
   } catch (error) {
     console.log(error);
   }
@@ -54,16 +55,17 @@ module.exports.Login = async (req, res, next) => {
       return res.json({ message: "Incorrect password or email" });
     }
     const token = createSecretToken(user._id);
-    res.cookie("cookie", token, {
+    res.cookie("token", token, {
       withCredentials: true,
       httpOnly: false,
     });
+    console.log("Cookie login:", token);
     res.status(201).json({
       message: "User Logged in successfully",
       success: true,
     });
 
-    next();
+    // next();
   } catch (err) {
     console.error(err);
   }
