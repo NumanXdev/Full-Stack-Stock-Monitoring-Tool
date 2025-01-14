@@ -54,6 +54,14 @@ function Navbar() {
                 Support
               </Link>
             </li>
+            <li class="nav-item">
+              <Link
+                class="nav-link active"
+                to="http://localhost:3002/dashboard"
+              >
+                Dashboard
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
