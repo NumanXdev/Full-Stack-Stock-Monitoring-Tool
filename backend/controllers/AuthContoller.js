@@ -18,13 +18,13 @@ module.exports.Signup = async (req, res, next) => {
     //   const user = new User({ username, email, password, createdAt });
     //   await user.save();
 
-    const token = createSecretToken(user._id);
+    const token = createSecretToken(user._id,user.username);
 
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: false,
     });
-    console.log("signup token sent"+token)
+    console.log("signup token sent" + token);
     res.status(201).json({
       message: "User signed in successfully",
       success: true,
@@ -54,7 +54,8 @@ module.exports.Login = async (req, res, next) => {
     if (!auth) {
       return res.json({ message: "Incorrect password or email" });
     }
-    const token = createSecretToken(user._id);
+    console.log(user);
+    const token = createSecretToken(user._id,user.username);
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: false,
