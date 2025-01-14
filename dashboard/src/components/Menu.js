@@ -1,8 +1,22 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+import { useCookies } from "react-cookie";
+import { Avatar } from "@mui/material";
 
 const Menu = () => {
+  const [cookies] = useCookies(["token"]);
+  const [userData, SetuserData] = useState({ id: "", username: "" });
+
+  useEffect(() => {
+    if (cookies.token) {
+      const decodedToken = jwtDecode(cookies.token);
+      const id = decodedToken.id;
+      const username = decodedToken.username;
+      SetuserData({ id, username });
+    }
+  }, [cookies]);
+
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
@@ -13,6 +27,14 @@ const Menu = () => {
   const handleProfileClick = (index) => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };
+
+  //------------> Avatar Name & Avatr ID
+
+  const Avatar =
+    userData.username.length >= 2
+      ? userData.username.slice(0, 2).toUpperCase()
+      : userData.username.slice(0, 1);
+  const userId = userData.id.slice(0, 3);
 
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
@@ -91,8 +113,8 @@ const Menu = () => {
         </ul>
         <hr />
         <div className="profile" onClick={handleProfileClick}>
-          <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
+          <div className="avatar">{Avatar}</div>
+          <p className="username">{userId}</p>
         </div>
       </div>
     </div>
