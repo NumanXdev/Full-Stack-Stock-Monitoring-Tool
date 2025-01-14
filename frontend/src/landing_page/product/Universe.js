@@ -1,6 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Universe() {
+  const navigate = useNavigate();
+  const signup = () => {
+    navigate("/Signup");
+  };
   return (
     <div className="container">
       <div className="row">
@@ -85,6 +90,7 @@ function Universe() {
       <button
         className="btn btn-primary d-block mx-auto mt-4 mb-5"
         style={{ width: "20%" }}
+        onClick={signup}
       >
         Sign up for free
       </button>
