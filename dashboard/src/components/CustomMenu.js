@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import { useCookies } from "react-cookie";
 
-const Menu = () => {
+// Material UI
+
+const CustomMenu = () => {
   const [cookies] = useCookies(["token"]);
   const [userData, SetuserData] = useState({ id: "", username: "" });
 
@@ -120,4 +122,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default CustomMenu;
