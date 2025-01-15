@@ -9,15 +9,15 @@ function Universe() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-1"></div>
 
-        <div className="col mt-4">
+        <div className=" mt-5">
           <h2 className="text-center">The Zerodha Universe</h2>
-          <p className="text-center">
+          <p className="text-center mb-5">
             Extend your trading and investment experience even further with our
             partner platforms
           </p>
-          <div className="universe d-flex align-items-center justify-content-around text-center">
+        <div className="col-1"></div>
+          <div className="col universe d-flex flex-wrap flex-md-nowrap align-items-center justify-content-around text-center">
             <div className="first p-3">
               <img
                 className=""
@@ -89,7 +89,7 @@ function Universe() {
       </div>
       <button
         className="btn btn-primary d-block mx-auto mt-4 mb-5"
-        style={{ width: "20%" }}
+        style={{ width: "auto" }}
         onClick={signup}
       >
         Sign up for free
