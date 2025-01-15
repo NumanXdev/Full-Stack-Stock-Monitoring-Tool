@@ -3,16 +3,16 @@ function CreateTicket() {
   return (
     <div className="container">
       <div className="row text-muted mt-5">
-        <h5>To create a ticket, select a relevant topic</h5>
+        <h5 className="px-3" style={{fontSize:"18px"}}>To create a ticket, select a relevant topic</h5>
       </div>
       <div className="row mt-4">
-        <div className="col-4">
+        <div className="col-12 col-md-4">
           <a href="#" className="">
-            <h5 className="text-muted">
+            <h5 className="text-muted" >
               <i className="fa-solid fa-plus-circle"></i>&nbsp; Account Opening
             </h5>
           </a>
-          <div className="ms-3 p-3">
+          <div className="p-1">
             <div className="mt-2">
               <a style={{ color: "blue", fontSize: "14px" }} href="">
                 Getting Started
@@ -50,7 +50,7 @@ function CreateTicket() {
               <i class="fa-solid fa-wallet"></i>&nbsp; Funds
             </h5>
           </a>
-          <div className="ms-3 p-3">
+          <div className=" p-1 mb-3">
             <div className="mt-2">
               <a style={{ color: "blue", fontSize: "14px" }} href="">
                 Getting Started
@@ -83,13 +83,13 @@ function CreateTicket() {
             </div>
           </div>
         </div>
-        <div className="col-4">
+        <div className="col-12 col-md-4">
           <a href="#" className="">
             <h5 className="text-muted">
               <i class="fa-solid fa-user"></i>&nbsp; Your Zerodha Account
             </h5>
           </a>
-          <div className="ms-3 p-3">
+          <div className=" p-1">
             <div className="mt-2">
               <a style={{ color: "blue", fontSize: "14px" }} href="">
                 Login credentials
@@ -127,7 +127,7 @@ function CreateTicket() {
             <i class="fa-solid fa-circle-user fa-rotate-270"></i>&nbsp; Console
             </h5>
           </a>
-          <div className="ms-3 p-3">
+          <div className=" p-1">
             <div className="mt-2">
               <a style={{ color: "blue", fontSize: "14px" }} href="">
                 IPO
@@ -161,13 +161,13 @@ function CreateTicket() {
           </div>
         </div>
         {/* Third */}
-        <div className="col-4">
+        <div className="col-12 col-md-4">
           <a href="#" className="">
             <h5 className="text-muted">
               <i class="fa-solid fa-chart-simple"></i>&nbsp; Account Opening
             </h5>
           </a>
-          <div className="ms-3 p-3">
+          <div className=" p-1">
             <div className="mt-2">
               <a style={{ color: "blue", fontSize: "14px" }} href="">
                 Trading FAQs
@@ -205,7 +205,7 @@ function CreateTicket() {
             <i class="fa-solid fa-coins"></i>&nbsp; Coin
             </h5>
           </a>
-          <div className="ms-3 p-3">
+          <div className="p-1">
             <div className="mt-2">
               <a style={{ color: "blue", fontSize: "14px" }} href="">
                 Understanding mutual funds and Coin
