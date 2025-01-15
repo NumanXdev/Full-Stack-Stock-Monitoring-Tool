@@ -12,7 +12,7 @@ function Footer() {
               style={{ width: "50%" }}
             />
             <p className="text-muted mt-3" style={{ fontSize: "12px" }}>
-              &copy; 2010 - 2024, Zerodha Broking Ltd. All rights reserved.
+              &copy; 2010 - 2025, Zerodha Broking Ltd. All rights reserved.
             </p>
             <div className="border-bottom py-2">
               <i className="fa-brands fa-x-twitter text-muted"></i>

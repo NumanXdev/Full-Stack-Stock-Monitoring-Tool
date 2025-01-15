@@ -6,7 +6,7 @@ function Stats() {
       <div className="row mb-3">
         
         <div className="col-12 col-md-6  mt-3 mt-md-5 p-3">
-          <h3 className="mb-5">Trust with confidence</h3>
+          <h1 className="mb-5">Trust with confidence</h1>
 
           <h5 >Customer-first always</h5>
           <p className="text-muted">

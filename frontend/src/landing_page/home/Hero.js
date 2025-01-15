@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../../index.css"
 function Hero() {
   const navigate = useNavigate();
   const signup = () => {
@@ -8,17 +9,17 @@ function Hero() {
   return (
 
 
-    <div className="container p-5 ">
+    <div className="container p-2 mt-4 mb-5 ">
       <div className="row text-center">
         <img
           src="/media/images/homeHero.png"
           alt="Hero"
-          className="img-fluid mb-5"
-          style={{width:"100%"}}
+          className="img-fluid mb-5 hero-image"
+          style={{width:"auto",maxHeight:"auto"}}
         />
-        <div className="col-12">
-          <h1 className="mt-5">Invest in everything</h1>
-          <p>
+        <div className="col-12"> 
+          <h2 className="mt-5">Invest in everything</h2>
+          <p className="text-muted">
             Online platform to invest in stocks, derivatives, mutual funds,
             ETFs, bonds, and more.
           </p>

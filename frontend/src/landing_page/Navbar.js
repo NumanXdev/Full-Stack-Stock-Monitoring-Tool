@@ -4,20 +4,23 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav
-      class="navbar navbar-expand-lg border-bottom "
-      style={{ backgroundColor: "#ffff" }}
+      className="navbar navbar-expand-md border-bottom"
+      style={{ backgroundColor: "#fff" }}
     >
-      <div class="container p-2">
-        <Link class="navbar-brand" to="/">
+      <div className="container p-2">
+      
+        <Link className="navbar-brand" to="/">
           <img
-            className=""
+            className="img-fluid"
             src="/media/images/logo.svg"
-            style={{ width: "20%" }}
+            style={{ width: "auto", maxWidth: "120px" }}
             alt="logo"
           />
         </Link>
+
+        {/* Navbar Toggler for Small Screens */}
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -25,40 +28,39 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <Link class="nav-link active" aria-current="page" to="/Signup">
+
+        {/* Collapsible Navbar Links */}
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link" aria-current="page" to="/Signup">
                 Signup
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link active " to="/About">
+            <li className="nav-item">
+              <Link className="nav-link" to="/About">
                 About
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link active" to="/Products">
+            <li className="nav-item">
+              <Link className="nav-link" to="/Products">
                 Product
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link active" to="/Pricing">
+            <li className="nav-item">
+              <Link className="nav-link" to="/Pricing">
                 Pricing
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link active" to="/Support">
+            <li className="nav-item">
+              <Link className="nav-link" to="/Support">
                 Support
               </Link>
             </li>
-            <li class="nav-item">
-              <Link
-                class="nav-link active"
-                to="http://localhost:3002/dashboard"
-              >
+            <li className="nav-item">
+              <Link className="nav-link" to="http://localhost:3002/dashboard">
                 Dashboard
               </Link>
             </li>

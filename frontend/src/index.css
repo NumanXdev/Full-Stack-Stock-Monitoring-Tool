@@ -70,3 +70,10 @@ a {
   text-decoration: underline;
 }
 
+/* @media (max-width: 768px) {
+  .hero-image {
+    width: 100%;
+    max-width: 400px;
+    max-height: auto;
+  }
+} */

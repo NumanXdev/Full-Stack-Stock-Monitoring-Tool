@@ -9,14 +9,14 @@ function LeftSection({
   appStore,
 }) {
   return (
-    <div className="container">
-      <div className="row mt-5 mb-5 ">
+    <div className="container mt-5">
+      <div className="row  ">
         <div className="col-2 "></div>
-        <div className="col-12 col-md-5 p-2">
-          <img style={{ width: "80%" }} src={imageURL} className="img-fluid" />
+        <div className="col-12 col-md-5  ">
+          <img style={{ width: "auto" }} src={imageURL} className="img-fluid" />
         </div>
-        <div className="col-12 col-md-4 mt-5">
-          <h4 className="">{Title}</h4>
+        <div className="col-12 col-md-4">
+          <h4 className="mt-3">{Title}</h4>
           <p className="text-muted" style={{ fontSize: "13px" }}>
             {description}
           </p>
