@@ -4,8 +4,13 @@ function Awards() {
   return (
     <div className="container mb-5 ">
       <div className="row ">
-        <div className="col col-6  ">
-          <img src="/media/images/largestBroker.svg" alt="Award" className="img-fluid " style={{ minWidth: "20rem"}}/>
+        <div className="col-12 col-md-6  ">
+          <img
+            src="/media/images/largestBroker.svg"
+            alt="Award"
+            className="img-fluid "
+            style={{ minWidth: "20rem" }}
+          />
         </div>
         <div className="col-12 col-md-6 p-3 mt-5 mt-md-0">
           <h2 className="p-1">Largest stock broker in India</h2>
@@ -14,7 +19,7 @@ function Awards() {
             order volumes in India daily by trading and investing in :
           </p>
           <div className="row">
-            <div className="col col-6 text-muted p-1">
+            <div className=" col-6 text-muted p-1">
               <ul className="">
                 <li className="">
                   <p>Future and Options</p>
@@ -27,7 +32,7 @@ function Awards() {
                 </li>
               </ul>
             </div>
-            <div className="col col-6 mb-5 text-muted p-1">
+            <div className=" col-6 mb-5 text-muted p-1">
               <ul className="">
                 <li className="">
                   <p>Stock & IPO'</p>
