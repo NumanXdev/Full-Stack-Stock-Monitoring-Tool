@@ -4,17 +4,19 @@ function Team() {
     <div className="container">
       <h3 className="text-center mt-5 pt-5 mb-5 text-muted">People</h3>
       <div className="row mb-5">
-        <div className="col-1"></div>
-        <div className="col-4  text-center">
+      
+        <div className="col-12 col-md-4  text-center">
           <img
-            className=""
+            className="img-fluid"
             src="/media/images/nithinKamath.jpg"
-            style={{ borderRadius: "100%", width: "70%" }}
+            style={{ borderRadius: "100%", maxWidth:"230px"}}
+             
+            
           />
           <div className="name mt-2 text-muted"><b>Nithin Kamath</b></div>
           <div className="role text-muted" style={{fontSize:"12px"}}>Founder, CEO</div>
         </div>
-        <div className="col-6 text-muted" style={{fontSize:"13px"}}>
+        <div className="col-12 col-md-6 mt-4 mt-md-0 text-muted lh-lg text-left" style={{fontSize:"15px"}}>
           <p>
             Nithin bootstrapped and founded Zerodha in 2010 to overcome the
             hurdles he faced during his decade long stint as a trader. Today,
@@ -40,7 +42,7 @@ function Team() {
             </a>
           </p>
         </div>
-        <div className="col-1"></div>
+        
       </div>
     </div>
   );

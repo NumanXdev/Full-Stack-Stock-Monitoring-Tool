@@ -60,15 +60,15 @@ const Login = () => {
   };
 
   return (
-    <div className="container vh-100 d-flex align-items-center">
-      <div className="row w-100">
+    <div className="container mt-5 mb-5">
+      <div className="row ">
       
-        <div className="col-md-5 d-flex align-items-center">
+        <div className="col-md-5 ">
           <div
-            className="card shadow p-4 w-100"
-            style={{
-              maxHeight: "400px", 
-            }}
+            className="card shadow p-4 "
+            // style={{
+            //   maxHeight: "400px", 
+            // }}
           >
             <h2 className="text-primary text-center mb-3">
               Login to Your Account
@@ -102,13 +102,13 @@ const Login = () => {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary w-100 mt-2">
+              <button type="submit" className="btn btn-primary  mt-2">
                 Submit
               </button>
               <p className="mt-3 text-center">
                 Don't have an account?
-                <Link to={"/signup"} className="text-primary">
-                  Signup
+                 <Link to={"/signup"} className="text-primary ps-1">
+                   Signup
                 </Link>
               </p>
             </form>
@@ -116,9 +116,9 @@ const Login = () => {
         </div>
 
        
-        <div className="col-md-7 d-flex justify-content-center align-items-center">
+        <div className="col-md-7 ">
           <img
-            className="img-fluid"
+            className="img-fluid d-none d-md-block ms-2 "
             src="media/images/signup.png"
             alt="Login"
             style={{ maxWidth: "90%" }}

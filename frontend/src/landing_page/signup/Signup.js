@@ -63,10 +63,10 @@ const Signup = () => {
   };
 
   return (
-    <div className="container vh-100 d-flex align-items-center">
-      <div className="row w-100">
+    <div className="container   mt-5 mb-5">
+      <div className="row ">
        
-        <div className="col-md-7 d-flex justify-content-center align-items-center">
+        <div className="col-md-7 ">
           <img
             className="img-fluid d-none d-md-block"
             src="media/images/signup.png"
@@ -74,7 +74,7 @@ const Signup = () => {
             style={{ maxWidth: "90%" }}
           />
         </div>
-        <div className="col-md-5 d-flex align-items-center">
+        <div className="col-md-5 px-3 ">
           <div
             className="card shadow p-3 w-100"
             style={{
