@@ -2,17 +2,17 @@ import React from "react";
 
 function Education() {
   return (
-    <div className="container p-5">
+    <div className="container ">
       <div className="row">
-        <div className="col col-5">
+        <div className="col-12 col-md-5">
           <img
             src="/media/images/education.svg"
             alt="education"
             style={{ width: "100%" }}
           />
         </div>
-        <div className="col col-1"></div>
-        <div className="col col-6  p-5">
+        {/* <div className="col col-1"></div> */}
+        <div className="col-12 col-md-6 p-3 mt-5">
           <h3 className="">Free and open market education</h3>
           <p>
             Varsity, the largest online stock market education book in the world

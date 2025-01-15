@@ -6,7 +6,7 @@ function Hero() {
     navigate("/Signup");
   };
   return (
-    /*                  <-----------------------   Hero  ------------------------>                     */
+
 
     <div className="container p-5 ">
       <div className="row text-center">
@@ -14,6 +14,7 @@ function Hero() {
           src="/media/images/homeHero.png"
           alt="Hero"
           className="img-fluid mb-5"
+          style={{width:"100%"}}
         />
         <div className="col-12">
           <h1 className="mt-5">Invest in everything</h1>

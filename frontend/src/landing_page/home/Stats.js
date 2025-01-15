@@ -2,10 +2,10 @@ import React from "react";
 
 function Stats() {
   return (
-    <div className="container p-3 mb-3">
+    <div className="container  mb-5">
       <div className="row mb-3">
         
-        <div className="col-12 col-md-6  p-4">
+        <div className="col-12 col-md-6  mt-3 mt-md-5 p-3">
           <h3 className="mb-5">Trust with confidence</h3>
 
           <h5 >Customer-first always</h5>
@@ -34,7 +34,7 @@ function Stats() {
             money.
           </p>
         </div>
-        <div className="col-12 col-md-6 p-4 mt-md-4">
+        <div className="col-12 col-md-6  mt-md-5">
           <img
             className="img-fluid"
             src="/media/images/ecosystem.png"
@@ -42,7 +42,7 @@ function Stats() {
             style={{ width: "100%" }}
           />
           <div className="mt-3 text-center d-flex justify-content-evenly ">
-            <a href="#" style={{ textDecoration: "none",color:"blue" }}>
+            <a href="/Products" style={{ textDecoration: "none",color:"blue" }}>
               Explore our products{" "}
               <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>
@@ -52,7 +52,7 @@ function Stats() {
           </div>
         </div>
       </div>
-      <div className="text-center mb-5">
+      <div className="text-center mt-5 mb-5">
         <img className="img-fluid"  src="/media/images/pressLogos.png"  />
         </div>
     </div>
