@@ -18,8 +18,8 @@ function OpenAccount() {
           F&O trades.
         </p>
         <button
-          className="p-2 btn btn-primary fs-6 mb-5 "
-          style={{ width: "15%", margin: "0 auto" }}
+          className="p-2 btn btn-primary  mb-5 px-4 py-2 "
+          style={{ width: "auto", margin: "0 auto" }}
           onClick={signup}
         >
           Sign Up for free

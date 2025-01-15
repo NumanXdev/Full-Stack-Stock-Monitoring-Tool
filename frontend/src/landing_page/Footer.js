@@ -4,33 +4,35 @@ function Footer() {
   return (
     <footer className="footer border-top">
       <div className="container p-5">
-        <div className="row">
-          <div className="col">
+        <div className="row ">
+          <div className="col-12  col-md-3 ">
             <img
               className=""
               src="/media/images/logo.svg"
               style={{ width: "50%" }}
             />
-            <p className="text-muted mt-3 " style={{ fontSize: "12px" }}>
+            <p className="text-muted mt-3" style={{ fontSize: "12px" }}>
               &copy; 2010 - 2024, Zerodha Broking Ltd. All rights reserved.
             </p>
-            <i class="fa-brands fa-x-twitter text-muted"></i>{" "}
-            <i class="fa-brands fa-square-facebook text-muted"></i>
-            <i class="fa-brands fa-instagram text-muted"></i>
-            <i class="fa-brands fa-linkedin-in text-muted"></i>
-            <hr />
-            <i class="fa-brands fa-youtube text-muted"></i>
-            <i class="fa-brands fa-whatsapp text-muted"></i>
-            <i class="fa-brands fa-telegram text-muted"></i>
+            <div className="border-bottom py-2">
+              <i className="fa-brands fa-x-twitter text-muted"></i>
+              <i className="fa-brands fa-square-facebook text-muted"></i>
+              <i className="fa-brands fa-instagram text-muted"></i>
+              <i className="fa-brands fa-linkedin-in text-muted"></i>
+            </div>
+            <div className="py-2">
+              <i className="fa-brands fa-youtube text-muted"></i>
+              <i className="fa-brands fa-whatsapp text-muted"></i>
+              <i className="fa-brands fa-telegram text-muted "></i>
+            </div>
           </div>
-          <div className="col ">
+          <div className="col-12  col-md-3 mt-3 mt-md-0">
             <p>
               <b>Company</b>
             </p>
             <a href="#" className="text-muted">
-              {" "}
               About
-            </a>{" "}
+            </a>
             <br />
             <a href="#" className="text-muted">
               Products
@@ -61,14 +63,13 @@ function Footer() {
             </a>
             <br />
           </div>
-          <div className="col">
+          <div className="col-12  col-md-3 mt-3 mt-md-0 mb-3">
             <p>
               <b>Support</b>
             </p>
             <a href="#" className="text-muted">
-              {" "}
               Contact us
-            </a>{" "}
+            </a>
             <br />
             <a href="#" className="text-muted">
               Support portal
@@ -103,22 +104,22 @@ function Footer() {
             </a>
             <br />
           </div>
-          <div className="col">
+          <div className="col-12 col-md-3 mt-3 mt-md-0">
             <p>
               <b>Account</b>
             </p>
             <a href="#" className="text-muted">
-              {" "}
               Open an account
-            </a>{" "}
+            </a>
             <br />
             <a href="#" className="text-muted">
-              {" "}
               Fund Transfer
-            </a>{" "}
+            </a>
             <br />
           </div>
-
+        </div>
+<hr/>
+        <div className="row">
           <div className="text-muted para mt-5">
             <p>
               Zerodha Broking Ltd. : Member of NSE, BSE​ &​ MCX – SEBI
@@ -131,7 +132,6 @@ function Footer() {
               Bengaluru - 560078, Karnataka, India. For any complaints
               pertaining to securities broking please write to
               <a style={{ color: "blue" }} href="#">
-                {" "}
                 complaints@zerodha.com
               </a>
               , for DP related to dp@zerodha.com. Please ensure you carefully
@@ -188,7 +188,7 @@ function Footer() {
               </a>
             </p>
           </div>
-          <div className="bb mt-2 text-muted">
+          <div className="bb mt-2 text-muted d-flex flex-wrap">
             <p>NSE</p>
             <p>BSE</p>
             <p>MCX</p>

@@ -3,9 +3,9 @@ import React from "react";
 function Stats() {
   return (
     <div className="container p-3 mb-3">
-      <div className="row">
-        <hr></hr>
-        <div className="col col-6  p-5">
+      <div className="row mb-3">
+        
+        <div className="col-12 col-md-6  p-4">
           <h3 className="mb-5">Trust with confidence</h3>
 
           <h5 >Customer-first always</h5>
@@ -34,25 +34,27 @@ function Stats() {
             money.
           </p>
         </div>
-        <div className="col col-6 p-5 mt-4">
+        <div className="col-12 col-md-6 p-4 mt-md-4">
           <img
-            className=""
+            className="img-fluid"
             src="/media/images/ecosystem.png"
             alt="Ecosystem"
             style={{ width: "100%" }}
           />
-          <div className="mt-3 text-center">
-            <a href="#" className="mx-5" style={{ textDecoration: "none" }}>
+          <div className="mt-3 text-center d-flex justify-content-evenly ">
+            <a href="#" style={{ textDecoration: "none",color:"blue" }}>
               Explore our products{" "}
               <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>
-            <a href="#" style={{ textDecoration: "none" }}>
-              Try
+            <a href="#" style={{ textDecoration: "none",color:"blue" }}>
+              Try <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
         </div>
       </div>
-      <div className="text-center mb-5"><img   src="/media/images/pressLogos.png" /></div>
+      <div className="text-center mb-5">
+        <img className="img-fluid"  src="/media/images/pressLogos.png"  />
+        </div>
     </div>
   );
 }
