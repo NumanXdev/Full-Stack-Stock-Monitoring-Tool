@@ -33,7 +33,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/login",
+        "https://full-stack-stock-monitoring-tool.onrender.com/login",
         {
           ...inputValue,
         },
@@ -62,12 +62,11 @@ const Login = () => {
   return (
     <div className="container mt-5 mb-5">
       <div className="row ">
-      
         <div className="col-md-5 ">
           <div
             className="card shadow p-4 "
             // style={{
-            //   maxHeight: "400px", 
+            //   maxHeight: "400px",
             // }}
           >
             <h2 className="text-primary text-center mb-3">
@@ -107,15 +106,14 @@ const Login = () => {
               </button>
               <p className="mt-3 text-center">
                 Don't have an account?
-                 <Link to={"/signup"} className="text-primary ps-1">
-                   Signup
+                <Link to={"/signup"} className="text-primary ps-1">
+                  Signup
                 </Link>
               </p>
             </form>
           </div>
         </div>
 
-       
         <div className="col-md-7 ">
           <img
             className="img-fluid d-none d-md-block ms-2 "
