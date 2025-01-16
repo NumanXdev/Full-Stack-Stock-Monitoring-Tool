@@ -30,9 +30,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 const allowedOrigins = [
-  "https://full-stack-stock-monitoring-tool.onrender.com", 
+  "https://full-stack-stock-monitoring-tool.onrender.com",
   "https://full-stack-stock-monitoring-tool.vercel.app",
-  process.env.DASHBOARD_URL,
+  "https://full-stack-stock-monitoring-tool-r7oc.vercel.app",
 ];
 
 app.use(
