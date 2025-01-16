@@ -34,7 +34,7 @@ app.use(
   cors({
     origin: [
       "https://full-stack-stock-monitoring-tool.onrender.com", // Backend
-      process.env.FRONTEND_URL, // Frontend
+      "https://full-stack-stock-monitoring-tool.vercel.app/", // Frontend
       process.env.DASHBOARD_URL, // Dashboard
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
