@@ -23,8 +23,9 @@ module.exports.Signup = async (req, res, next) => {
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: true,
-      sameSite: "None", 
+      sameSite: "None",
       secure: true,
+      domain: ".vercel.app",
     });
     console.log("signup token sent" + token);
     res.status(201).json({
@@ -61,8 +62,9 @@ module.exports.Login = async (req, res, next) => {
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: true,
-      sameSite: "None", 
+      sameSite: "None",
       secure: true,
+      domain: ".vercel.app",
     });
     console.log("Cookie login:", token);
     res.status(201).json({
