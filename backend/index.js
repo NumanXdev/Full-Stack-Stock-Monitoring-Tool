@@ -33,15 +33,15 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      process.env.BACKEND_URL,          //backend
-      process.env.FRONTEND_URL,            //frontend
-      process.env.DASHBOARD_URL,             //dashboard
+      process.env.BACKEND_URL,      // Backend
+      process.env.FRONTEND_URL,    // Frontend
+      process.env.DASHBOARD_URL,   // Dashboard
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
-// app.options("*", cors());
+app.options("*", cors());
 app.get("/", (req, res) => {
   res.send("Root Working!");
 });
