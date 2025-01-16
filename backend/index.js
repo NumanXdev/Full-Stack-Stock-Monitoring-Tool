@@ -33,9 +33,9 @@ app.options("*", cors());
 app.use(
   cors({
     origin: [
-      process.env.BACKEND_URL,      // Backend
-      process.env.FRONTEND_URL,    // Frontend
-      process.env.DASHBOARD_URL,   // Dashboard
+      "https://full-stack-stock-monitoring-tool.onrender.com", // Backend
+      process.env.FRONTEND_URL, // Frontend
+      process.env.DASHBOARD_URL, // Dashboard
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
