@@ -59,12 +59,13 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link"
-                to="full-stack-stock-monitoring-tool-r7oc.vercel.app/dashboard"
+                href="https://full-stack-stock-monitoring-tool-r7oc.vercel.app/dashboard"
+                target="_self"
               >
                 Dashboard
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
