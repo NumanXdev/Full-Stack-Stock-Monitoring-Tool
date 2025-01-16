@@ -8,7 +8,6 @@ function Navbar() {
       style={{ backgroundColor: "#fff" }}
     >
       <div className="container p-2">
-      
         <Link className="navbar-brand" to="/">
           <img
             className="img-fluid"
@@ -60,7 +59,10 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="http://localhost:3002/dashboard">
+              <Link
+                className="nav-link"
+                to="full-stack-stock-monitoring-tool-r7oc.vercel.app/dashboard"
+              >
                 Dashboard
               </Link>
             </li>
