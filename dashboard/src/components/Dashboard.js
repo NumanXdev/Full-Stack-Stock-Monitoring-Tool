@@ -27,7 +27,7 @@ const Dashboard = () => {
       try {
         console.log("Cookie Dashboard" + cookies.token);
         if (!cookies.token) {
-          window.location.href = "http://localhost:3001/login";
+          window.location.href = "https://full-stack-stock-monitoring-tool.vercel.app/login";
           return;
         }
 
@@ -38,12 +38,12 @@ const Dashboard = () => {
         } catch (error) {
           console.error("Error decoding the token", error);
           removeCookie("token");
-          window.location.href = "http://localhost:3001/login";
+          window.location.href = "https://full-stack-stock-monitoring-tool.vercel.app/login";
           return;
         }
 
         const response = await axios.post(
-          "http://localhost:3000/verify",
+          "https://full-stack-stock-monitoring-tool.onrender.com/verify",
           {},
           { withCredentials: true }
         );
@@ -66,12 +66,12 @@ const Dashboard = () => {
           }
         } else {
           removeCookie("token");
-          window.location.href = "http://localhost:3001/login";
+          window.location.href = "https://full-stack-stock-monitoring-tool.vercel.app/login";
         }
       } catch (error) {
         console.error("Verification failed:", error);
         removeCookie("token");
-        window.location.href = "http://localhost:3001/login";
+        window.location.href = "https://full-stack-stock-monitoring-tool.vercel.app/login";
       }
     };
 

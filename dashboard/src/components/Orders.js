@@ -9,7 +9,7 @@ const Orders = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/orders")
+      .get("https://full-stack-stock-monitoring-tool.onrender.com/orders")
       .then((res) => {
         SetOrders(res.data);
       })
