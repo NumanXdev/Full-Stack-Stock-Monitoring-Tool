@@ -4,15 +4,28 @@ import { jwtDecode } from "jwt-decode";
 import { useCookies } from "react-cookie";
 
 // Material UI components
+import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import Divider from "@mui/material/Divider";
+
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Logout from "@mui/icons-material/Logout";
+
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const CustomMenu = () => {
   const [cookies, removeCookie] = useCookies(["token"]);
@@ -60,78 +73,56 @@ const CustomMenu = () => {
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
 
+  //menu
+  const [show, setShow] = React.useState(false);
+
+  const toggleDrawer = (newOpen) => () => {
+    setShow(newOpen);
+  };
+
+  const DrawerList = (
+    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+      <List>
+        {[
+          { text: "Dashboard", path: "/dashboard" },
+          { text: "Orders", path: "/orders" },
+          { text: "Holdings", path: "/holdings" },
+          { text: "Positions", path: "/positions" },
+          { text: "Funds", path: "/funds" },
+          { text: "Apps", path: "/apps" },
+        ].map((item, index) => (
+          <React.Fragment key={item.text}>
+            <ListItem disablePadding>
+              <Link
+                to={item.path}
+                style={{ textDecoration: "none", width: "100%" }}
+                onClick={() => handleMenuClick(index)}
+              >
+                <ListItemButton>
+                  <ListItemIcon>
+                    <DoubleArrowIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={item.text}
+                    primaryTypographyProps={{
+                      className:
+                        selectedMenu === index ? activeMenuClass : menuClass,
+                    }}
+                  />
+                </ListItemButton>
+              </Link>
+            </ListItem>
+            <Divider />
+          </React.Fragment>
+        ))}
+      </List>
+    </Box>
+  );
+
   return (
     <div className="menu-container">
       <img src="logo.png" style={{ width: "50px" }} alt="Logo" />
       <div className="menus">
-        <ul>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/dashboard"
-              onClick={() => handleMenuClick(0)}
-            >
-              <p className={selectedMenu === 0 ? activeMenuClass : menuClass}>
-                Dashboard
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/orders"
-              onClick={() => handleMenuClick(1)}
-            >
-              <p className={selectedMenu === 1 ? activeMenuClass : menuClass}>
-                Orders
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/holdings"
-              onClick={() => handleMenuClick(2)}
-            >
-              <p className={selectedMenu === 2 ? activeMenuClass : menuClass}>
-                Holdings
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/positions"
-              onClick={() => handleMenuClick(3)}
-            >
-              <p className={selectedMenu === 3 ? activeMenuClass : menuClass}>
-                Positions
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/funds"
-              onClick={() => handleMenuClick(4)}
-            >
-              <p className={selectedMenu === 4 ? activeMenuClass : menuClass}>
-                Funds
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/apps"
-              onClick={() => handleMenuClick(5)}
-            >
-              <p className={selectedMenu === 5 ? activeMenuClass : menuClass}>
-                Apps
-              </p>
-            </Link>
-          </li>
-        </ul>
         <hr />
         <React.Fragment>
           <Box
@@ -163,6 +154,14 @@ const CustomMenu = () => {
               </IconButton>
             </Tooltip>
           </Box>
+          {/* DrawerList */}
+
+          <Button onClick={toggleDrawer(true)}>
+            <MenuIcon />
+          </Button>
+          <Drawer open={show} onClose={toggleDrawer(false)}>
+            {DrawerList}
+          </Drawer>
           <Menu
             anchorEl={anchorEl}
             id="account-menu"

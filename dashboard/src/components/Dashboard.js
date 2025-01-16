@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import { jwtDecode } from "jwt-decode";
 
 import Apps from "./Apps";
 import Funds from "./Funds";
@@ -19,6 +20,7 @@ const Dashboard = () => {
   const [cookies, removeCookie] = useCookies(["token"]);
   const [username, setUsername] = useState("");
   const [isWelcome, SetisWelcome] = useState(false);
+  const [userData, setUserData] = useState({ username: "" });
 
   useEffect(() => {
     const verifyCookie = async () => {
@@ -30,6 +32,17 @@ const Dashboard = () => {
           return;
           // console.log(cookies);
           // console.log("Cookie not avaible");
+        }
+        try {
+          // Decode the token to get the username
+          const decodedToken = jwtDecode(cookies.token);
+          const { username } = decodedToken;
+          setUserData({ username });
+        } catch (error) {
+          console.error("Error decoding the token", error);
+          removeCookie("token");
+          window.location.href = "http://localhost:3001/login";
+          return;
         }
 
         const response = await axios.post(
@@ -70,7 +83,11 @@ const Dashboard = () => {
       </GeneralContextProvider>
       <div className="content">
         <Routes>
-          <Route exact path="/dashboard" element={<Summary />} />
+          <Route
+            exact
+            path="/dashboard"
+            element={<Summary user={userData} />}
+          />
           <Route path="/orders" element={<Orders />} />
           <Route path="/holdings" element={<Holdings />} />
           <Route path="/positions" element={<Positions />} />

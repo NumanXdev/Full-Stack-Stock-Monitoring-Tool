@@ -1,10 +1,13 @@
 import React from "react";
 
-const Summary = () => {
+const Summary = ({ user }) => {
   return (
     <>
       <div className="username">
-        <h6>Hi, User!</h6>
+        <h6>
+          Hi ,
+          { user.username} !
+        </h6>
         <hr className="divider" />
       </div>
 
