@@ -60,7 +60,7 @@ const CustomMenu = () => {
 
   const logout = () => {
     removeCookie("token");
-    window.location.href = "http://localhost:3001/login";
+    window.location.href = "https://full-stack-stock-monitoring-tool.vercel.app/login";
   };
 
   // Avatar Name & Avatar ID
