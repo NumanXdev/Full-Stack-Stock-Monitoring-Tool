@@ -39,7 +39,7 @@ app.use(
     credentials: true,
   })
 );
-app.options("*", cors());
+// app.options("*", cors());
 app.get("/", (req, res) => {
   res.send("Root Working!");
 });
@@ -145,7 +145,7 @@ app.post("/orders", async (req, res) => {
   // res.send("Saved")
 });
 
-//Recebing Data
+//Receving Data
 
 app.get("/orders", async (req, res) => {
   let allOrder = await Order.find({});
