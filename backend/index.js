@@ -28,7 +28,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
-// app.options("*", cors());
+app.options("*", cors());
 
 app.use(
   cors({
@@ -41,7 +41,6 @@ app.use(
     credentials: true,
   })
 );
-app.options("*", cors());
 app.get("/", (req, res) => {
   res.send("Root Working!");
 });
