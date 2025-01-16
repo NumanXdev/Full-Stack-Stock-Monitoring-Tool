@@ -8,7 +8,7 @@ module.exports.userVerification = (req, res) => {
   if (!token) {
     return res.json({ status: false });
   }
-  console.log("Authiddleware token " + token);
+  // console.log("Authiddleware token " + token);
   jwt.verify(token, process.env.TOKEN_KEY, async (err, data) => {
     if (err) {
       // console.error("JWT Verification Error:", err);
