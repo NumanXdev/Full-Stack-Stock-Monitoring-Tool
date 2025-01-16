@@ -22,12 +22,14 @@ const Dashboard = () => {
   const [isWelcome, SetisWelcome] = useState(false);
   const [userData, setUserData] = useState({ username: "" });
 
+  const FRONTEND_URL = "https://full-stack-stock-monitoring-tool.vercel.app";
+
   useEffect(() => {
     const verifyCookie = async () => {
       try {
         console.log("Cookie Dashboard" + cookies.token);
         if (!cookies.token) {
-          window.location.href = "https://full-stack-stock-monitoring-tool.vercel.app/login";
+          window.location.href = `${FRONTEND_URL}/login`;
           return;
         }
 
@@ -38,7 +40,7 @@ const Dashboard = () => {
         } catch (error) {
           console.error("Error decoding the token", error);
           removeCookie("token");
-          window.location.href = "https://full-stack-stock-monitoring-tool.vercel.app/login";
+          window.location.href = `${FRONTEND_URL}/login`;
           return;
         }
 
@@ -66,12 +68,12 @@ const Dashboard = () => {
           }
         } else {
           removeCookie("token");
-          window.location.href = "https://full-stack-stock-monitoring-tool.vercel.app/login";
+          window.location.href = `${FRONTEND_URL}/login`;
         }
       } catch (error) {
         console.error("Verification failed:", error);
         removeCookie("token");
-        window.location.href = "https://full-stack-stock-monitoring-tool.vercel.app/login";
+        window.location.href = `${FRONTEND_URL}/login`;
       }
     };
 
