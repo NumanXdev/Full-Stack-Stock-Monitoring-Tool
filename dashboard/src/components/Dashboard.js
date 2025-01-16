@@ -29,6 +29,7 @@ const Dashboard = () => {
       try {
         console.log("Cookie Dashboard" + cookies.token);
         if (!cookies.token) {
+          console.log("cookie not Found");
           window.location.href = `${FRONTEND_URL}/login`;
           return;
         }
