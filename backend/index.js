@@ -1,5 +1,7 @@
 //4
-require("dotenv").config();
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -31,9 +33,9 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "https://localhost:3000",
-      "http://localhost:3001",
-      "http://localhost:3002",
+      process.env.BACKEND_URL,          //backend
+      process.env.FRONTEND_URL,            //frontend
+      process.env.DASHBOARD_URL,             //dashboard
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
