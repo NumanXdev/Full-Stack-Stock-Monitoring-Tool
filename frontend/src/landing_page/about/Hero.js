@@ -3,12 +3,12 @@ function Hero() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-2"></div>
-        <div className="col-12 col-md-4 text-center text-muted mt-5 mb-5 border-bottom pb-5 ">
+        {/* <div className="col-2"></div> */}
+        <div className=" col-12 text-center text-muted mt-5 mb-5 border-bottom pb-5 px-5  ">
           <h4>We pioneered the discount broking model in India.</h4>
           <h4>Now, we are breaking ground with our technology.</h4>{" "}
         </div>
-        <div className="col-2"></div>
+        {/* <div className="col-2"></div> */}
       </div>
 
       <div className="row">

@@ -31,9 +31,9 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "https://full-stack-stock-monitoring-tool.onrender.com/",
-      "https://full-stack-stock-monitoring-tool.vercel.app/",
-      "full-stack-stock-monitoring-tool-r7oc.vercel.app/",
+      "https://localhost:3000",
+      "http://localhost:3001",
+      "http://localhost:3002",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
