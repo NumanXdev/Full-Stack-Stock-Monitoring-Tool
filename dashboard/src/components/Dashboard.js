@@ -27,14 +27,11 @@ const Dashboard = () => {
       try {
         console.log("Cookie Dashboard" + cookies.token);
         if (!cookies.token) {
-          // Redirect to login if no token is present
           window.location.href = "http://localhost:3001/login";
           return;
-          // console.log(cookies);
-          // console.log("Cookie not avaible");
         }
+
         try {
-          // Decode the token to get the username
           const decodedToken = jwtDecode(cookies.token);
           const { username } = decodedToken;
           setUserData({ username });
@@ -50,17 +47,21 @@ const Dashboard = () => {
           {},
           { withCredentials: true }
         );
-        // .then((res) => {
-        //   console.log(res);
-        // })
-        // .catch((err) => {
-        //   console.log(err);
-        // });
+
         const { status, user } = response.data;
         if (status) {
           setUsername(user);
+
           if (!isWelcome) {
-            toast(`Hello ${user}`, { position: "top-right" });
+            toast(`Hello ${user}`, { position: "top-left" });
+
+            if (window.innerWidth <= 768) {
+              toast("Switch to Desktop site for better experience", {
+                position: "top-center",
+                style: { width: "100%", wordWrap: "break-word" },
+              });
+            }
+
             SetisWelcome(true);
           }
         } else {
@@ -73,8 +74,9 @@ const Dashboard = () => {
         window.location.href = "http://localhost:3001/login";
       }
     };
+
     verifyCookie();
-  }, [cookies, navigate, removeCookie]);
+  }, [cookies, removeCookie, isWelcome]);
 
   return (
     <div className="dashboard-container">
@@ -95,6 +97,7 @@ const Dashboard = () => {
           <Route path="/apps" element={<Apps />} />
         </Routes>
       </div>
+
       <ToastContainer />
     </div>
   );

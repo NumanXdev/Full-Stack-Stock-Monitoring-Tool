@@ -59,10 +59,7 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="full-stack-stock-monitoring-tool-r7oc.vercel.app/dashboard"
-              >
+              <Link className="nav-link" to="http://localhost:3002/dashboard">
                 Dashboard
               </Link>
             </li>
