@@ -28,19 +28,28 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
-app.options("*", cors());
+
+const allowedOrigins = [
+  "https://full-stack-stock-monitoring-tool.onrender.com", 
+  "https://full-stack-stock-monitoring-tool.vercel.app",
+  process.env.DASHBOARD_URL,
+];
 
 app.use(
   cors({
-    origin: [
-      "https://full-stack-stock-monitoring-tool.onrender.com", // Backend
-      "https://full-stack-stock-monitoring-tool.vercel.app/", // Frontend
-      process.env.DASHBOARD_URL, // Dashboard
-    ],
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
+app.options("*", cors());
 app.get("/", (req, res) => {
   res.send("Root Working!");
 });
