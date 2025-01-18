@@ -32,7 +32,7 @@ app.use(cookieParser());
 const allowedOrigins = [
   "https://full-stack-stock-monitoring-tool.onrender.com",
   "https://full-stack-stock-monitoring-tool.vercel.app",
-  "https://full-stack-stock-monitoring-tool-r7oc.vercel.app",
+  "https://full-stack-stock-monitoring-tool-xtjp.vercel.app",
 ];
 
 app.use(
