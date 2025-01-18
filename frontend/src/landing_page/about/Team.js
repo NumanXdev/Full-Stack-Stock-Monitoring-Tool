@@ -14,7 +14,7 @@ function Team() {
             <b>Mohammad Numan</b>
           </div>
           <div className="role text-muted" style={{ fontSize: "12px" }}>
-            Founder, CEO
+            Full-Stack Developer, Student
           </div>
         </div>
         <div

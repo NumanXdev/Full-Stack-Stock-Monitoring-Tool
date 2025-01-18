@@ -5,7 +5,7 @@ function RightSection({ imageURL, Title, description, learnMore }) {
       <div className="row ">
         <div className="col-2"></div>
         <div className="col-12 col-md-3 order-2 order-md-1 ">
-          <h4 className="mt-3">{Title}</h4>
+          <h4 className="mt-5">{Title}</h4>
           <p className="text-muted " style={{ fontSize: "13px" }}>
             {description}
           </p>
