@@ -195,8 +195,10 @@ main()
 
 //Error Handling MiddleWare
 app.use((err, req, res, next) => {
-  console.log(err);
-  res.status(500).json({ message: "Internal Server Error" });
+  console.error(err.stack); 
+  res.status(500).json({
+    message: process.env.NODE_ENV === "production" ? "Internal Server Error" : err.message,
+  });
 });
 
 app.listen(PORT, () => {
