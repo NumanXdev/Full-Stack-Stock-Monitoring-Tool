@@ -17,7 +17,7 @@ import { GeneralContextProvider } from "./GeneralContext";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies(["token"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const [username, setUsername] = useState("");
   const [isWelcome, SetisWelcome] = useState(false);
   const [userData, setUserData] = useState({ username: "" });
