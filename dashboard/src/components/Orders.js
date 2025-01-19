@@ -9,7 +9,8 @@ const Orders = () => {
 
   useEffect(() => {
     axios
-      .get("https://full-stack-stock-monitoring-tool.onrender.com/orders")
+      // .get("https://full-stack-stock-monitoring-tool.onrender.com/orders")
+      .get("http://localhost:3000/orders")
       .then((res) => {
         SetOrders(res.data);
       })

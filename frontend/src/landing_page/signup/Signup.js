@@ -36,7 +36,7 @@ const Signup = () => {
     console.log("Form data being sent:", inputValue);
     try {
       const { data } = await axios.post(
-        "https://full-stack-stock-monitoring-tool.onrender.com/signup",
+        "http://localhost:3000/signup",
         {
           ...inputValue,
         },

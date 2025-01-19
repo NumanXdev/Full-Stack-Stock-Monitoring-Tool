@@ -23,8 +23,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const CustomMenu = () => {
@@ -60,7 +58,8 @@ const CustomMenu = () => {
 
   const logout = () => {
     removeCookie("token");
-    window.location.href = "https://full-stack-stock-monitoring-tool.vercel.app/login";
+    // window.location.href = "https://full-stack-stock-monitoring-tool.vercel.app/login";
+    window.location.href = "http://localhost:3001/login";
   };
 
   // Avatar Name & Avatar ID

@@ -33,7 +33,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://full-stack-stock-monitoring-tool.onrender.com/login",
+        // "https://full-stack-stock-monitoring-tool.onrender.com/login",
+        "http://localhost:3000/login",
         {
           ...inputValue,
         },
