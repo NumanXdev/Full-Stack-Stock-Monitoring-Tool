@@ -28,14 +28,8 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
 
-// Allowed Origins
-// app.use(
-//   cors({
-//     origin: ["http://localhost:3001", "http://localhost:3002"],
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     credentials: true,
-//   })
-// );
+app.options("*", cors());
+
 app.use(
   cors({
     origin: [
