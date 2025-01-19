@@ -59,13 +59,15 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link
+              <button
                 className="nav-link"
-                to="https://full-stack-stock-monitoring-tool-xtjp.vercel.app/dashboard"
-                // to="http://localhost:3002/dashboard"
+                onClick={() => {
+                  window.location.href =
+                    "https://full-stack-stock-monitoring-tool-xtjp.vercel.app/dashboard";
+                }}
               >
                 Dashboard
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
