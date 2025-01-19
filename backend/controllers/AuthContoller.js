@@ -25,6 +25,7 @@ module.exports.Signup = async (req, res, next) => {
       httpOnly: true,
       secure: true,
       sameSite: "none",
+      domain: ".vercel.app",
     });
     console.log("signup token sent" + token);
     res.status(201).json({
@@ -68,6 +69,7 @@ module.exports.Login = async (req, res, next) => {
     res.status(201).json({
       message: "User Logged in successfully",
       success: true,
+      domain: ".vercel.app",
     });
 
     // next();
