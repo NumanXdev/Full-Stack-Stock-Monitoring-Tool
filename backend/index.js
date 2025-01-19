@@ -38,7 +38,10 @@ app.use(cookieParser());
 // );
 app.use(
   cors({
-    origin: ["https://full-stack-stock-monitoring-tool.vercel.app", "https://full-stack-stock-monitoring-tool-xtjp.vercel.app"],
+    origin: [
+      "https://full-stack-stock-monitoring-tool-xtjp.vercel.app",
+      "https://full-stack-stock-monitoring-tool.vercel.app",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
