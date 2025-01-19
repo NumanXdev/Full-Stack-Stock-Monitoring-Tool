@@ -8,8 +8,8 @@ const Positions = () => {
   let [allPositions, setAllPositions] = useState([]);
 
   useEffect(() => {
-    // axios.get("https://full-stack-stock-monitoring-tool.onrender.com/positions")
-    axios.get("http://localhost:3000/positions")
+    axios.get("https://full-stack-stock-monitoring-tool.onrender.com/positions")
+    // axios.get("http://localhost:3000/positions")
     .then((res) => {
       setAllPositions(res.data);
     });

@@ -22,6 +22,9 @@ module.exports.Signup = async (req, res, next) => {
 
     res.cookie("token", token, {
       withCredentials: true,
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
     });
     console.log("signup token sent" + token);
     res.status(201).json({
@@ -57,6 +60,9 @@ module.exports.Login = async (req, res, next) => {
     const token = createSecretToken(user._id, user.username);
     res.cookie("token", token, {
       withCredentials: true,
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
     });
     console.log("Cookie login:", token);
     res.status(201).json({

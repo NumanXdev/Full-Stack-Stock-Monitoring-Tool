@@ -61,8 +61,8 @@ function Navbar() {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                // to="https://full-stack-stock-monitoring-tool-xtjp.vercel.app/dashboard"
-                to="http://localhost:3002/dashboard"
+                to="https://full-stack-stock-monitoring-tool-xtjp.vercel.app/dashboard"
+                // to="http://localhost:3002/dashboard"
               >
                 Dashboard
               </Link>

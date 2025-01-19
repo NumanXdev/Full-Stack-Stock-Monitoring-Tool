@@ -23,7 +23,7 @@ const Dashboard = () => {
   const [userData, setUserData] = useState({ username: "" });
 
   // const FRONTEND_URL = "https://full-stack-stock-monitoring-tool.vercel.app";
-  const FRONTEND_URL = "http://localhost:3001";
+  const FRONTEND_URL = "https://full-stack-stock-monitoring-tool.vercel.app";
 
   useEffect(() => {
     const verifyCookie = async () => {
@@ -47,8 +47,8 @@ const Dashboard = () => {
         }
 
         const response = await axios.post(
-          // "https://full-stack-stock-monitoring-tool.onrender.com/verify",
-          "http://localhost:3000/verify",
+          "https://full-stack-stock-monitoring-tool.onrender.com/verify",
+          // "http://localhost:3000/verify",
           {},
           { withCredentials: true }
         );

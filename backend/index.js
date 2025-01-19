@@ -29,9 +29,16 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Allowed Origins
+// app.use(
+//   cors({
+//     origin: ["http://localhost:3001", "http://localhost:3002"],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
-    origin: ["http://localhost:3001", "http://localhost:3002"],
+    origin: ["https://full-stack-stock-monitoring-tool.vercel.app", "https://full-stack-stock-monitoring-tool-xtjp.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

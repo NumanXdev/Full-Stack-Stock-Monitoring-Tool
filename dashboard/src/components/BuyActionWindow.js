@@ -13,8 +13,8 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = async () => {
     try {
-      // await axios.post("https://full-stack-stock-monitoring-tool.onrender.com/orders", {
-      await axios.post("http://localhost:3000/orders", {
+      await axios.post("https://full-stack-stock-monitoring-tool.onrender.com/orders", {
+      // await axios.post("http://localhost:3000/orders", {
         name: uid,
         qty: stockQuantity,
         price: stockPrice,
