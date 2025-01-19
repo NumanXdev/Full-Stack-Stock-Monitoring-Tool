@@ -25,14 +25,14 @@ const Dashboard = () => {
 
   useEffect(() => {
     const verifyCookie = async () => {
-      // try {
-        // console.log("All Cookies:", cookies);
-        // if (!cookies.token) {
-        //   console.error("Token not found in cookies.");
-        //   window.location.href = `${FRONTEND_URL}/login`;
-        //   return;
-        // }
-  
+      try {
+        console.log("All Cookies:", cookies);
+        if (!cookies.token) {
+          console.error("Token not found in cookies.");
+          window.location.href = `${FRONTEND_URL}/login`;
+          return;
+        }
+
         try {
           const decodedToken = jwtDecode(cookies.token);
           console.log("Decoded Token:", decodedToken);
@@ -40,17 +40,17 @@ const Dashboard = () => {
           setUserData({ username });
         } catch (error) {
           console.error("Error decoding token:", error);
-          // removeCookie("token");
-          // window.location.href = `${FRONTEND_URL}/login`;
+          removeCookie("token");
+          window.location.href = `${FRONTEND_URL}/login`;
           return;
         }
-  
+
         const response = await axios.post(
           "https://full-stack-stock-monitoring-tool.onrender.com/verify",
           {},
           { withCredentials: true }
         );
-  
+
         const { status, user } = response.data;
         if (status) {
           setUsername(user);
@@ -60,19 +60,18 @@ const Dashboard = () => {
           }
         } else {
           console.error("Verification failed");
-          // removeCookie("token");
-          // window.location.href = `${FRONTEND_URL}/login`;
+          removeCookie("token");
+          window.location.href = `${FRONTEND_URL}/login`;
         }
-      // } catch (error) {
-      //   // console.error("Verification error:", error);
-      //   // removeCookie("token");
-      //   // window.location.href = `${FRONTEND_URL}/login`;
-      // }
+      } catch (error) {
+        console.error("Verification error:", error);
+        removeCookie("token");
+        window.location.href = `${FRONTEND_URL}/login`;
+      }
     };
-  
+
     verifyCookie();
   }, [cookies, removeCookie, isWelcome]);
-  
 
   return (
     <div className="dashboard-container">
