@@ -29,11 +29,11 @@ const Dashboard = () => {
     const verifyCookie = async () => {
       try {
         console.log("Cookie Dashboard" + cookies.token);
-        if (!cookies.token) {
-          console.log("cookie not Found");
-          window.location.href = `${FRONTEND_URL}/login`;
-          return;
-        }
+        // if (!cookies.token) {
+        //   console.log("cookie not Found");
+        //   window.location.href = `${FRONTEND_URL}/login`;
+        //   return;
+        // }
 
         try {
           const decodedToken = jwtDecode(cookies.token);
@@ -41,8 +41,8 @@ const Dashboard = () => {
           setUserData({ username });
         } catch (error) {
           console.error("Error decoding the token", error);
-          removeCookie("token");
-          window.location.href = `${FRONTEND_URL}/login`;
+          // removeCookie("token");
+          // window.location.href = `${FRONTEND_URL}/login`;
           return;
         }
 
@@ -70,13 +70,14 @@ const Dashboard = () => {
             SetisWelcome(true);
           }
         } else {
-          removeCookie("token");
-          window.location.href = `${FRONTEND_URL}/login`;
+          console.log("Something Went Wrong");
+          // removeCookie("token");
+          // window.location.href = `${FRONTEND_URL}/login`;
         }
       } catch (error) {
         console.error("Verification failed:", error);
-        removeCookie("token");
-        window.location.href = `${FRONTEND_URL}/login`;
+        // removeCookie("token");
+        // window.location.href = `${FRONTEND_URL}/login`;
       }
     };
 
